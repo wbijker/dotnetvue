@@ -19,10 +19,20 @@ module.exports = (env) => {
             'main': './ClientApp/boot.js'
         },
         module: {
-            rules: [{
+            rules: [
+                {
                     test: /\.vue$/,
                     include: /ClientApp/,
-                    loader: 'vue-loader'
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {
+                            scss: 'style-loader!css-loader!sass-loader'
+                        }
+                    }
+                },
+                {
+                    test: /\.s[a|c]ss$/,
+                    loader: 'style-loader!css-loader!sass-loader'
                 },
                 {
                     test: /\.css$/,

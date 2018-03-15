@@ -1,8 +1,8 @@
-<template>
-    <div>
-        <span class="orange">Counter: {{ counter }} </span> 
-        <button @click="inc">Inc</button>
-    </div>
+<template lang="pug">
+div
+    span.orange Counter: {{ counter }}
+    div 
+        button(@click="inc") Increase
 </template>
 <script>
 export default {
@@ -18,8 +18,12 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+$color: blue;
+
 .orange {
-    color: orange;
+    background-color: $color;
+    color: white;
+    font-size: 16vmin;
 }
 </style>
